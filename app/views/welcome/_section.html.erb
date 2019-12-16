@@ -1,0 +1,16 @@
+<section class="hero is-fullheight" id="<%= local_assigns[:id] %>">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <% if local_assigns[:imageleft] %>
+                    <%= render "image", image: local_assigns[:image] %>
+                    <%= render "info", date: local_assigns[:date], details: local_assigns[:details], location: local_assigns[:location] %>
+                <% else %>
+                    <%= render "info", date: local_assigns[:date], details: local_assigns[:details], location: local_assigns[:location] %>
+                    <%= render "image", image: local_assigns[:image] %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <%= render "arrow", section: local_assigns[:next] %>
+</section>
