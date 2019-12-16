@@ -4,7 +4,7 @@ lock "~> 3.11.2"
 set :application, "wedding"
 
 
-set :repo_url, "git@github.com:brendancox/WeddingInviter.git"
+set :repo_url, "https://github.com/brendancox/WeddingInviter.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
