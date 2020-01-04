@@ -22,6 +22,7 @@ class InviteController < ApplicationController
     File.open("./config/responses.key").each do |line|
       pass = line
     end
+    pass = pass.strip
     if pass == ""
       head :forbidden
     end
