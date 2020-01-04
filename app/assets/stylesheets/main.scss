@@ -55,3 +55,60 @@ body {
   text-align: center;
   font-size: 4.0em;
 }
+
+
+// Reception invite
+
+.reception_header {
+  background-color: rgba($color: white, $alpha: 0.6);
+  padding: 20px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.reception_title {
+  text-align: center;
+  font-size: 4.0em;
+}
+
+.reception_subtitle {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.reception_details {
+  background-color: rgba($color: white, $alpha: 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.reception_about {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+
+.reception_question {
+  font-size: 1.0em;
+  color: gray;
+}
+
+.reception_answer {
+  font-size: 2.0em;
+  color: darkslategrey;
+}
+
+.rsvp_form {
+  margin-top: 25px;
+  background-color: rgba($color: white, $alpha: 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.maplink {
+  font-size: 0.5em;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 5px;
+}

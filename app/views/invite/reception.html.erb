@@ -1,0 +1,142 @@
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="reception_header">
+          <div class="title reception_title">
+            You're invited to our wedding reception!
+          </div>
+          <div class="reception_subtitle">
+            Carwen and Brendan are getting married. Come celebrate!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+      </div>
+      <div class="column is-four-fifths">
+        <div class="reception_details">
+          <div class="reception_question">
+            When?
+          </div>
+          <div class="reception_answer">
+            <p>8th February 2020 at 3pm until late</p>
+          </div>
+          <div class="reception_question">
+            Where?
+          </div>
+          <div class="reception_answer">
+            <p>Thistle Inn, Wellington</p>
+            <p class="maplink"><a href="https://goo.gl/maps/4bJRas9a1yKZSiuz9" target="_blank">Google Maps</a></p>
+          </div>
+          <div class="reception_about">
+            <p>Food will be provided. There will be a small bar tab for drinks. Get there quick before it runs out!</p>
+            <p>Partners/spouses and children are also welcome.</p>
+            <p>We look forward to seeing you there!</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+      </div>
+    </div>
+  </div>
+</section> 
+
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+      </div>
+      <div class="column is-four-fifths">
+        <% if @rsvp == "" %>
+        <div class="rsvp_form">
+          <div class="title">
+            Please RSVP by 18th January 2020
+          </div>
+
+          <%= form_with(url: "/rsvp", method: "post") do %>
+
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <%= text_field_tag(:guest1, "", :class => "input is-medium", :required => true) %>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Can you make it? <% if @fieldsmissing %><span class="has-text-danger">Required</span><% end %></label>
+              <div class="control">
+                <label class="radio">
+                  <%= radio_button_tag(:coming, "yes") %>
+                  Yes
+                </label>
+                <label class="radio">
+                  <%= radio_button_tag(:coming, "no") %>
+                  No
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Bringing someone? If so, their name too please.</label>
+              <div class="control">
+                <%= text_field_tag(:guest2, "", :class => "input is-medium") %>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Bringing your kids? How many children?</label>
+              <div class="control">
+                <%= number_field_tag(:kids, "", :class => "input is-medium") %>
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <%= text_field_tag(:email, "", :class => "input is-medium") %>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Any special dietary requirements?</label>
+              <div class="control">
+                <%= text_field_tag(:dietary, "", :class => "input is-medium") %>
+              </div>
+            </div>
+
+              <div class="field">
+              <label class="label">Favourite song?</label>
+              <div class="control">
+                <%= text_field_tag(:song, "", :class => "input is-medium") %>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <%= submit_tag("RSVP", :class => "button is-link is-medium") %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <% elsif @rsvp == "yes" %>
+          <div class="rsvp_form">
+            <div class="title">
+              <p>We'll see you there!</p>
+            </div>
+          </div>
+        <% else @rsvp == "no" %>
+          <div class="rsvp_form">
+            <div class="title">
+              <p>No worries! See you another time.</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="column">
+      </div>
+    </div>
+  </div>
+</section>

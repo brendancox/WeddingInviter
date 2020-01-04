@@ -1,0 +1,31 @@
+<% if @csv == "csv" %>
+    <% @responses.first.attributes.each do |key, field| %>
+        <%= key %>,
+    <% end %>
+    <br>
+    <% @responses.each do |response| %>
+        <% response.attributes.each do |key, field| %>
+            <%= field %>,
+        <% end %>
+        <br>
+    <% end %>
+<% else %>
+    <section>
+        <div class="container">
+            <table class="responses">
+                <tr>
+            <% @responses.first.attributes.each do |key, field| %>
+                <th class="response"><%= key %></th>
+            <% end %>
+                </tr>
+            <% @responses.each do |response| %>
+                <tr>
+                <% response.attributes.each do |key, field| %>
+                    <td class="response"><%= field %></td>
+                <% end %>
+                </tr>
+            <% end %>
+            </table>
+        </div>
+    </section>
+<% end %>

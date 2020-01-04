@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guest1: MyString
+  guest2: MyString
+  kids: 1
+  coming: MyString
+
+two:
+  guest1: MyString
+  guest2: MyString
+  kids: 1
+  coming: MyString
